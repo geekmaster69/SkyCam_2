@@ -42,6 +42,5 @@ RecyclerView.Adapter<ChannelAdapter.ViewHolder>(){
                 listener.onClickListener(channel)
             }
         }
-
     }
 }
