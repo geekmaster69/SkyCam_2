@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/design_default_color_background"
+    tools:context=".presentation.videolivefragemnt.VideoLiveFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dp">
+
+            <org.videolan.libvlc.util.VLCVideoLayout
+                android:id="@+id/videoView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bnStartStop"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:text="Start RTSP" />
+
+            <Button
+                android:id="@+id/bntStop"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:text="Stop RTSP" />
+            <!--            <CheckBox-->
+            <!--                android:id="@+id/cbVideo"-->
+            <!--                android:text="Video"-->
+            <!--                android:checked="true"-->
+            <!--                android:layout_margin="10dp"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content" />-->
+            <!--            <CheckBox-->
+            <!--                android:id="@+id/cbAudio"-->
+            <!--                android:text="Audio"-->
+            <!--                android:checked="false"-->
+            <!--                android:layout_margin="10dp"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content" />-->
+
+            <!--            <CheckBox-->
+            <!--                android:id="@+id/cbDebug"-->
+            <!--                android:text="Debug"-->
+            <!--                android:checked="false"-->
+            <!--                android:layout_margin="20dp"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content" />-->
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</androidx.core.widget.NestedScrollView>

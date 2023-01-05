@@ -13,7 +13,7 @@ import com.example.skycam2.databinding.ItemUnitsBinding
 import com.example.skycam2.presentation.units.data.model.dto.Channel
 import com.example.skycam2.presentation.units.data.model.dto.DataCamera
 
-class UnitsAdapter(private val units: List<DataCamera>):
+class UnitsAdapter(private val units: List<DataCamera>, private val listener: OnClickListener):
 RecyclerView.Adapter<UnitsAdapter.ViewHolder>(), OnClickListener{
     private lateinit var context: Context
     private lateinit var mChannelAdapter: ChannelAdapter
@@ -23,7 +23,6 @@ RecyclerView.Adapter<UnitsAdapter.ViewHolder>(), OnClickListener{
         context = parent.context
         val view = LayoutInflater.from(context).inflate(R.layout.item_units, parent, false)
         return ViewHolder(view)
-
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -54,22 +53,17 @@ RecyclerView.Adapter<UnitsAdapter.ViewHolder>(), OnClickListener{
                 else binding.rvChannels.visibility = View.VISIBLE
                 unit.isVisible = !unit.isVisible
             }
-
         }
-
     }
 
     override fun getItemCount(): Int = units.size
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val binding = ItemUnitsBinding.bind(view)
-
-
     }
 
     override fun onClickListener(channel: Channel) {
-        Toast.makeText(context, channel.linkChannel, Toast.LENGTH_SHORT).show()
-
+                listener.onClickListener(channel)
     }
 
 }
